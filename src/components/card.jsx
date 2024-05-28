@@ -10,7 +10,7 @@ import {
     CardHeader,
     CardTitle,
 } from "@/components/ui/card"
-import { Switch } from "@/components/ui/switch"
+
 import { useEffect, useState } from "react"
 import { getUserLanguage } from "@/services/api-service"
 
@@ -31,7 +31,7 @@ const notifications = [
 
 
 export function CardDemo({ repo, username }) {
-    const [Lang, setLang] = useState('');
+    const [lang, setLang] = useState('');
 
     useEffect(() => {
         const fetchdata = async () => {
@@ -59,14 +59,15 @@ export function CardDemo({ repo, username }) {
                         <p className="text-sm font-medium leading-none">
                             Total Stars
                         </p>
-                        <p className="text-lg text-muted-foreground">
+                        <p className="text-3xl text-blue-500 text-muted-foreground px-4">
                             {repo.stargazers_count}
                         </p>
                     </div>
                     <Star className="text-blue-700" />
                 </div>
-                <div>
-                    <span className="flex h-2 w-2 translate-y-1 rounded-full bg-sky-500" />
+                <div className="flex gap-2">
+                    <span className="flex h-2 w-2 translate-y-2 rounded-full bg-sky-500" />
+                    {Object.keys(lang).length>0?Object.keys(lang).join(", "):"Other"}
                 </div>
             </CardContent>
             <CardFooter>

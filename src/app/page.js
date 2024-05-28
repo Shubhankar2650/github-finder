@@ -1,5 +1,6 @@
 'use client'
 import { getUserDataByUsername } from "@/services/api-service";
+import { Star, StarHalf } from "lucide-react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
@@ -44,7 +45,7 @@ export default function Home() {
         <div className="text-xs text-pretty absolute bottom-0">
           Build using Next.js,Github Rest Api and Tailwind CSS
           <br />
-          <div className=" text-center">Give it a star <a href="###">here</a></div>
+          <div className="flex justify-center">Give it a star <Star className="h-4 text-yellow-400"/> <a href="###">here</a></div>
         </div>
       </section>
     </>
