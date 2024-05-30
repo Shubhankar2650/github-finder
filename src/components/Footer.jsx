@@ -3,11 +3,11 @@ import React from 'react'
 
 export const Footer = () => {
     return (
-        <footer className=' h-14 w-full bg-blue-600 flex justify-center'>
+        <footer className=' h-14 w-full bg-gray-900 flex justify-center p-2 mt-2'>
             <div className="text-xs text-pretty">
                 Build using Next.js,Github Rest Api and Tailwind CSS
                 <br />
-                <p className="flex justify-center ">Give it a star <Star className='text-xs text-yellow-300'/> <a href="###">here</a></p>
+                <p className="flex justify-center ">Give it a star <Star className='text-xs text-yellow-300 h-4' /> <a href="###">here</a></p>
             </div>
         </footer>
     )

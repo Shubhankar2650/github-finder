@@ -11,42 +11,9 @@ import {
     CardTitle,
 } from "@/components/ui/card"
 
-import { useEffect, useState } from "react"
-import { getUserLanguage } from "@/services/api-service"
 
-const notifications = [
-    {
-        title: "Your call has been confirmed.",
-        description: "1 hour ago",
-    },
-    {
-        title: "You have a new message!",
-        description: "1 hour ago",
-    },
-    {
-        title: "Your subscription is expiring soon!",
-        description: "2 hours ago",
-    },
-]
+export function CardDemo({ repo }) {
 
-
-export function CardDemo({ repo, username }) {
-    const [lang, setLang] = useState('');
-
-    useEffect(() => {
-        const fetchdata = async () => {
-
-            try {
-                const { data } = await getUserLanguage(username, repo.name)
-                setLang(data);
-            } catch (error) {
-                console.log(error)
-            }
-        }
-
-        fetchdata()
-    }, [])
-    console.log(repo)
     return (
         <Card className="w-96">
             <CardHeader>
@@ -67,7 +34,7 @@ export function CardDemo({ repo, username }) {
                 </div>
                 <div className="flex gap-2">
                     <span className="flex h-2 w-2 translate-y-2 rounded-full bg-sky-500" />
-                    {Object.keys(lang).length>0?Object.keys(lang).join(", "):"Other"}
+                    {repo.language ? <div className="badge mx-2 badge-error">{repo.language}</div> : <div className="badge mx-2 badge-error">Other</div>}
                 </div>
             </CardContent>
             <CardFooter>

@@ -13,6 +13,9 @@ export const getUserDataByUsername = (username) => api.get(`/users/${username}`)
 
 export const getUserRepos = (username) => api.get(`/users/${username}/repos`)
 
-export const getUserLanguage = (username, repo) => api.get(`/repos/${username}/${repo}/languages`)
+export const getUserFollowers = (username) => api.get(`/users/${username}/followers`)
+
+export const getUserFollowing = (username) => api.get(`/users/${username}/following`)
+
 
 export default api;
