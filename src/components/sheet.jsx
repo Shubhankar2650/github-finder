@@ -11,13 +11,12 @@ import {
     SheetTrigger,
 } from "@/components/ui/sheet"
 import { getUserFollowers, getUserFollowing } from "@/services/api-service"
-import Image from "next/image"
 import { useEffect, useState } from "react"
 import { Cover } from "@/components/cover"
 import { Footer } from "./Footer"
 
 export function SheetDemo({ title, params }) {
-    const [list, setList] = useState()
+    const [list, setList] = useState(null)
 
     useEffect(() => {
         const fetchdata = async () => {
@@ -25,7 +24,6 @@ export function SheetDemo({ title, params }) {
                 if (title === "Followers") {
                     const { data } = await getUserFollowers(params)
                     setList(data)
-                    console.log(data)
                 }
                 else if ((title === "Following")) {
                     const { data: ree } = await getUserFollowing(params)
@@ -49,7 +47,7 @@ export function SheetDemo({ title, params }) {
                 <SheetHeader>
                     <SheetTitle>{title} List:</SheetTitle>
                 </SheetHeader>
-                <div className="grid gap-4 py-4 max-h-screen overflow-y-auto">
+                <div className="grid gap-1 py-1 max-h-screen overflow-y-auto mt-2 scroll-auto bg-scroll ">
                     {
                         list?.map((e, index) => <Cover key={index} data={e} />)
                     }

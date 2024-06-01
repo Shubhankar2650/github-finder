@@ -6,7 +6,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Footer } from '@/components/Footer';
 import { AtSign, BookCopy, GithubIcon, LinkIcon, Loader, Loader2, LocateIcon, MapPin, Star, Twitter, UserRoundCheck, UserRoundPlus } from 'lucide-react';
-import { CardDemo } from '@/components/card';
 import { Button } from "@/components/ui/button"
 import { MeteorsCard } from '@/components/meteorscard';
 import { Meteors } from '@/components/ui/meteors';
@@ -16,7 +15,6 @@ import { SheetDemo } from '@/components/sheet';
 
 const UserDetailPage = ({ params }) => {
 
-    // console.log(params)
     const [userdata, setUserdata] = useState(null);
     const [userrepos, setUserRepos] = useState(null);
     const [reponame, setRepoName] = useState(null);
@@ -33,7 +31,6 @@ const UserDetailPage = ({ params }) => {
             try {
                 const { data } = await getUserDataByUsername(params.username);
                 setUserdata(data)
-                // console.log(data)
                 const { data: repos } = await getUserRepos(params.username);
                 setUserRepos(repos);
                 setFiltererd(repos)
@@ -58,7 +55,12 @@ const UserDetailPage = ({ params }) => {
     if (!userdata) return <div className='h-screen w-full flex flex-col items-center justify-center'>
         {error ?
             <>
-                <iframe src="https://giphy.com/embed/xEznViNmOW5D7R22Ux" width="280" height="280" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+                <Image
+                    src="/skelton.webp"
+                    alt='image'
+                    width={280}
+                    height={280}
+                />
                 <p className='m-3 text-xl animate-pulse'>{error.slice(0, 45)}</p>
             </>
             : <>
