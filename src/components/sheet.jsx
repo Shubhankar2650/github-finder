@@ -30,7 +30,6 @@ export function SheetDemo({ title, params }) {
                 else if ((title === "Following")) {
                     const { data: ree } = await getUserFollowing(params)
                     setList(ree)
-                    console.log(data)
                 }
             } catch (error) {
                 console.log(error);

@@ -45,7 +45,7 @@ export default function Home() {
           </form>
         </div>
 
-        <div className="text-xs text-pretty absolute bottom-0">
+        <div className="text-xs text-pretty absolute bottom-0 z-10">
           Build using Next.js,Github Rest Api and Tailwind CSS
           <br />
           <div className="flex justify-center">Give it a star<Star className="h-4 text-yellow-400" /> <a href="https://github.com/Shubhankar2650/github-finder">here &gt;&gt;</a></div>

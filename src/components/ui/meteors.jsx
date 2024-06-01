@@ -8,10 +8,6 @@ export const Meteors = ({
 }) => {
     const meteors = new Array(number || 20).fill(true);
 
-    const getRandomPosition = () => ({
-        top: Math.random() * 100 + "vh",  // random position from 0 to 100% of viewport height
-        left: Math.random() * 100 + "vw", // random position from 0 to 100% of viewport width
-    });
     return (
         <>
             {meteors.map((el, idx) => (
@@ -24,8 +20,8 @@ export const Meteors = ({
                     )}
                     style={{
                         top: 0,
-                        left: Math.floor(Math.random() * (800 - -600) + -400) + "px",
-                        animationDelay: Math.random() * (0.8 - 0.2) + 0.2 + "s",
+                        left: `${Math.floor(Math.random() * 100) - 15}%`,
+                        animationDelay: `${(Math.random() * (0.8 - 0.2) + 0.2).toFixed(2)}s`,
                         animationDuration: Math.floor(Math.random() * (10 - 2) + 2) + "s",
                     }}
                 ></span >

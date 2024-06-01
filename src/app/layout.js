@@ -3,7 +3,7 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ subsets: ["vietnamese"] });
 
 export const metadata = {
   title: "Create Next App",

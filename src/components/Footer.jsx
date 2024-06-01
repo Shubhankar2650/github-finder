@@ -7,7 +7,7 @@ export const Footer = () => {
             <div className="text-xs text-pretty">
                 Build using Next.js,Github Rest Api and Tailwind CSS
                 <br />
-                <p className="flex justify-center ">Give it a star <Star className='text-xs text-yellow-300 h-4' /> <a href="###">here</a></p>
+                <p className="flex justify-center ">Give it a star <Star className='text-xs text-yellow-300 h-4' /> <a href="https://github.com/Shubhankar2650/github-finder">here &gt;&gt;</a></p>
             </div>
         </footer>
     )
