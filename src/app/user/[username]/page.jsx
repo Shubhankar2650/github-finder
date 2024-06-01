@@ -31,6 +31,7 @@ const UserDetailPage = ({ params }) => {
             try {
                 const { data } = await getUserDataByUsername(params.username);
                 setUserdata(data)
+                console.log(data)
                 const { data: repos } = await getUserRepos(params.username);
                 setUserRepos(repos);
                 setFiltererd(repos)
@@ -180,10 +181,13 @@ const UserDetailPage = ({ params }) => {
                             <GithubIcon />
                             <Link href={`${userdata.html_url}`}>Github</Link>
                         </div>
-                        <div className='flex gap-1'>
-                            <LinkIcon className="text-cyan-700" />
-                            <Link href={`https://${userdata.blog}`}>Website</Link>
-                        </div>
+                        {
+                            userdata.blog ? <div className='flex gap-1'>
+                                <LinkIcon className="text-cyan-700" />
+                                <Link href={`https://${userdata.blog}`}>Website</Link>
+                            </div>
+                                : <></>
+                        }
                     </div>
                     <Meteors number={40} />
                 </section>
